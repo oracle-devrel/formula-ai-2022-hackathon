@@ -265,8 +265,4 @@ For your information, this is the index definition for the dataset, meaning that
 
 ### Basic Notebook
 
-In [this notebook](challenge_1_basic_notebook.ipynb) you will find a very simple data representation from the dataset. There you'll be able to look at a very early-on Exploratory Data Analysis, including metrics like mean, median, max and min, 95% and 5% ranges, interquartile range, standard deviation and variance, skew, sum and distinct values for each one of the variables in the dataset.
-
-### Example Packet
-
-In [this file](challenge_1_example_packet.json) you can find an example packet in JSON format from the dataset.
+In [this notebook](../notebooks/formulahack.ipynb) you will find a very simple data representation from the dataset. There you'll be able to look at a very early-on Exploratory Data Analysis, including metrics like mean, median, max and min, 95% and 5% ranges, interquartile range, standard deviation and variance, skew, sum and distinct values for each one of the variables in the dataset.
