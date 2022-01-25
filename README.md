@@ -2,22 +2,17 @@
 
 [![License: UPL](https://img.shields.io/badge/license-UPL-green)](https://img.shields.io/badge/license-UPL-green) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=oracle-devrel_formula-ai-2022-hackathon)](https://sonarcloud.io/dashboard?id=oracle-devrel_formula-ai-2022-hackathon)
 
-## THIS IS A NEW, BLANK REPO THAT IS NOT READY FOR USE YET.  PLEASE CHECK BACK SOON!
-
 ## Introduction
-MISSING
+This is a repository containing technical specifications for the about the Formula AI 2022 Hackathon's challenges. You can find more information about the hackathon [here.](https://www.formulaaihack.com/)
 
-## Getting Started
-MISSING
+## Challenge 1
+Check out [this file](challenges/challenge1.md) for the technical abstract. Also, you have available [this notebook](notebooks/formulahack.ipynb) as a starting point in the challenge.
 
-### Prerequisites
-MISSING
+## Challenge 2
+WIP
 
-## Notes/Issues
-MISSING
-
-## URLs
-* Nothing at this time
+## Challenge 3
+WIP
 
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
