@@ -145,6 +145,7 @@ class MarshalZone(Packet):
 
 # Data Set Notes
 Considerations about the dataset:
+- It is recommended to filter out rows that provide no value to the AI model. This can occur if the number of forecast samples is 0, or if the session type is 0 (unknown session type, as seen in the WeatherForecastSample definition above).
 - It contains one or many weather forecast samples, up to 56. This depends on the duration of the race / grand prix where the data was recorded. For example, if we play a 1 hour game, we will encounter an array of 6 elements; the first one, for the current time (not a forecast), and subsequent ones for the following timeframes: 5 minutes, 10, 15, 30, and 60. So, we'll have the ground truth (0-minute time_offset), and the corresponding forecasts. A packet received 5 minutes later will then be in the time_offset=0 and will represent the ground truth.
 - In case of a Grand Prix, where we have practice, qualifying and race sessions (equivalent to Friday, Saturday and Sunday in reality), the length of the WeatherForecastSample packet array will be longer, as it will contain more predictions for more race types. The maximum theoretical number of forecast samples for the same timestamp is 56. This means that you're able to access weather forecasting for the weekend, even if you're still exploring data from the qualifying or practice sessions, and take this data into consideration if you want.
 - You have one packet per second. In reality, the game allows getting 2 PacketSessionData packets per second, but to avoid duplicates, we've removed half of them from the dataset.
@@ -265,4 +266,4 @@ For your information, this is the index definition for the dataset, meaning that
 
 ### Basic Notebook
 
-In [this notebook](../notebooks/formulahack.ipynb) you will find a very simple data representation from the dataset. There you'll be able to look at a very early-on Exploratory Data Analysis, including metrics like mean, median, max and min, 95% and 5% ranges, interquartile range, standard deviation and variance, skew, sum and distinct values for each one of the variables in the dataset.
+In [this website](../notebooks/basic_eda.html) you will find a very simple data representation from the dataset. There you'll be able to look at a very early-on Exploratory Data Analysis, including metrics like mean, median, max and min, 95% and 5% ranges, interquartile range, standard deviation and variance, skew, sum and distinct values for each one of the variables in the dataset.
