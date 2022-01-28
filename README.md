@@ -12,7 +12,7 @@ Check out [this file](challenges/challenge1.md) for the technical abstract. Also
 WIP
 
 ## Challenge 3
-WIP
+Check out [this file](challenges/challenge3.md) for the technical abstract. 
 
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
