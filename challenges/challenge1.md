@@ -12,8 +12,12 @@ Therefore, weather forecasting takes a big part on the possible outcome of a rac
 
 Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, uses a physics engine that behaves like the real world.
 
+# Competition
+
+The competition will be hosted in Kaggle. Follow [this link](https://www.kaggle.com/c/formulaai-hackathon) to register for the competition and make your submissions during the Hackathon.
+
 # Challenge
-In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model, able to make accurate weather predictions / forecasting.
+In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model able to make accurate weather predictions / forecasting.
 
 The data structure of each packet provided to you is as follows (example is a real packet from the dataset). You can have a detailed look at all structure definitions [in this file](https://github.com/jasperan/f1-telemetry-oracle/blob/main/telemetry_f1_2021/cleaned_packets.py). Note that in the dataset, two additional variables (not present in the game) have been added, which are:
 - gamehost: it's an unique identifier to separate different dataset consumers. It's infrastructure-related and it's a dummy variable from a qualitative perspective. 
@@ -145,8 +149,10 @@ class MarshalZone(Packet):
 
 # Data Set Notes
 Considerations about the dataset:
-- It is recommended to filter out rows that provide no value to the AI model. This can occur if the number of forecast samples is 0, or if the session type is 0 (unknown session type, as seen in the WeatherForecastSample definition above).
+- You'll be given the dataset in JSON and CSV formats. You're free to experiment with this non-relational data structure and develop your solution with this structure, or switch to the relational / tabular equivalent.
+- It is recommended to filter out rows that provide no value to the AI model. This can occur if the number of forecast samples is 0 (num_weather_forecast_samples=0), or if the session type is 0 (unknown session type, as seen in the WeatherForecastSample definition above). This can be done doing an Exploratory Data Analysis.
 - It contains one or many weather forecast samples, up to 56. This depends on the duration of the race / grand prix where the data was recorded. For example, if we play a 1 hour game, we will encounter an array of 6 elements; the first one, for the current time (not a forecast), and subsequent ones for the following timeframes: 5 minutes, 10, 15, 30, and 60. So, we'll have the ground truth (0-minute time_offset), and the corresponding forecasts. A packet received 5 minutes later will then be in the time_offset=0 and will represent the ground truth.
+- The number of weather forecast samples for the same packet will be skewed, as not all games played in the dataset have the same length (and many have a lower length than 60 minutes). Normalization is recommended. The variables chosen to normalize / leave out of the model can be found by making an Exploratory Data Analysis.
 - In case of a Grand Prix, where we have practice, qualifying and race sessions (equivalent to Friday, Saturday and Sunday in reality), the length of the WeatherForecastSample packet array will be longer, as it will contain more predictions for more race types. The maximum theoretical number of forecast samples for the same timestamp is 56. This means that you're able to access weather forecasting for the weekend, even if you're still exploring data from the qualifying or practice sessions, and take this data into consideration if you want.
 - You have one packet per second. In reality, the game allows getting 2 PacketSessionData packets per second, but to avoid duplicates, we've removed half of them from the dataset.
 - You are free to consider whichever variables you deem necessary to make an accurate prediction of the variable __weather__, together with a probability of an event happening (e.g. 85% cloudy).
@@ -155,39 +161,61 @@ Considerations about the dataset:
 - For practice races (P1, P2, P3) the maximum session length is 1 hour.
 - For qualifying races (Q1, Q2, Q3) the maximum session length is 18 minutes.
 
+Considerations for the competition:
+- Sometimes, when making a submission in Kaggle, you're prompted to submit a CSV file. This CSV file, called the submission CSV, contains a prediction for each one of the rows in the original dataset, and is compared against a solution CSV file (provided by the admins) to accurately measure the accuracy of the models. **However, this competition will not consider the public / private leaderboards to measure accuracy**. In order to check how submissions will be scored, please refer to the "Scoring" section further down below.
+
 # Inputs and Outputs
 
-You may choose your model to have as many inputs as you want from the variables included in the dataset. An exploratory data analysis is recommended to watch for feature importances and feature correlations when including/excluding variables from the dataset.
-There are two types of accepted outputs:
+Since this is a time-series-related model and the data structure is open for interpretation and decision of each one of the teams, **submissions will solely be based on the notebook provided by each one of the teams** (and everything contained inside the notebooks).
 
-## Minimal Output
-The output format **must** be a **numerical** value indicating the probability of a weather event ocurring:
+As inputs, each team is free to use as many variables to train the model. Please refer to the Scoring section down below to learn more about how each one of the notebooks will be scored.
+Therefore, you may choose your model to have as many inputs as you want from the variables included in the dataset. In order for the judges to test and score your notebooks easily, please adhere to the standards for code readability and presentation (section explaining this further in the instructions).
 
-```python
-{'3': '0.89'} # meaning there's an 89% probability of light rain 
-```
+## Output
+The output format **must** be a dictionary or similar representation indicating the predicted weather type at 5, 10, 15, 30 and 60 minutes after a timestamp, and the rain percentage probability at that time:
 
-## Extended Output
-We also allow, if it fits your modeling better, a more complete output indicating all weather probabilities. For example:
 ```python
 {
-	'0': 0.0,
-	'1': 0.05,
-	'2': 0.15,
-	'3': 0.70,
-	'4': 0.09,
-	'5.': 0.01
-}
+  '5':{
+    'type': 3,
+    'rain_percentage': 0.89 # e.g. 89% precipitation probability
+  },
+  '10':{
+    'type': 3,
+    '3': 0.64
+  }
+  '15':{
+    'type': 3,
+    '3': 0.52
+  }
+  '30':{
+    'type': 2, # overcast
+    '2': 0.19 # after 30 minutes, the weather type changes to overcast with a higher cumulative probability
+  }
+  '60':{
+    'type': 3,
+    '3': 0.94 # after 60 minutes, predictions suggest that we'll have light rain again with a 94% probability.
+  }
+} 
 ```
-meaning that there's a 0% probability of the sky being clear, a 5% probability of light clouds, 15% of overcast, 70% of light rain, 9% of heavy rain and 1% of a storm. 
+
+As you can see, in this minimal output, the "best" choice is expected for each one of the time frames (meaning the weather event most likely to happen and the chance of raining). As an explanation, in the above output, we have an 89% of rain probability and a predicted weather of "light rain" in 5 minutes; a 64% of rain and a predicted weather of "light rain" in 10 minutes; a 52% probability of rain and a predicted weather of "light rain" in 15 minutes; a 29% probability of rain and a predicted weather of "overcast" in 30 minutes; and a 94% rain probability and a weather of "light rain" in 60 minutes. We can conclude this example was pretty rainy.
+
+Note that the weather type and the rain probability percentage are independent variables. In order to see if they're related, using modules to print correlation coefficients between the variables is recommended.
+
+You can find all weather types in [this file (already referenced above)](https://github.com/jasperan/f1-telemetry-oracle/blob/main/telemetry_f1_2021/cleaned_packets.py), however here's a reminder of the weather types to understand the above example better: 0 = clear, 1 = light cloud, 2 = overcast, 3 = light rain, 4 = heavy rain, 5 = storm.
+
+As said before, an exploratory data analysis is recommended to watch for feature importances and feature correlations when including/excluding variables from the dataset.
 
 # Scoring
 The following things will be taken into consideration when doing an independent evaluation of challenge 1:
-1. Problem Modelling and approach (X points)
-2. Code presentation and readability (X points)
-3. Model accuracy (+3 extra points to the best model)
-4. Using OCI Compute or OCI Data Science in the solution (2 points).
-5. Providing a test code portion implementing your model (exporting the model, importing it and using it with an example data point (X points). More on this on the following sub-section: model exporting and testing.
+1. (5 points) Problem Modeling and approach (presented in the notebook)
+2. (3 points) Code presentation and readability (presented in the notebook)
+3. From the top 15 submissions, +2 extra points will be given to the top 5 teams with the highest model accuracy. The metric used will be Categorization Accuracy or Mean Absolute Error. Teams **must** indicate and print the accuracy of their model predictions in the notebook, using any available library, e.g. sklearn's accuracy score (meausrement must be MAE or Categorization Accuracy).
+4. (2 points) Making an architecture proposal that includes OCI in the solution. (presented in the notebook)
+5. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
+
+Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
 
 ### Problem Modeling and Approach
 
@@ -207,15 +235,18 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 
 ### Model Accuracy 
 
-We will rank the model accuracy and compare it with the rest of participants. Since model training and tuning is an important part of Data Science, we're awarding 3 additional points to the team with the highest model accuracy.
+We will rank the model accuracy and compare it with the rest of participants. Since model training and tuning is an important part of Data Science, we're awarding 2 additional points to the five teams present in the top 15 with the highest model accuracy.
+
+In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
 
 ### Using OCI
 
-If you show that you've used OCI during this challenge, you will be awarded with **2 bonus points**. We suggest looking into OCI Compute, OCI Data Science and OCI Functions as possible services that could be useful during development / submission.
+If you show in your solution that you can integrate the solution in OCI, be it for scaling, having an infrastructure in OCI that supports model testing, model retraining, or other innovative solutions, you will be awarded with **2 points**. We suggest looking into OCI Compute, OCI Data Science and OCI Functions as possible services that could be useful during development / submission.
+You can submit this section of "using OCI" inside the notebook itself when making the submission, by explaining your solution in a section. You can call this section "Using OCI".
 
 ### Model Exporting and Testing
 
-One of the scoring criteria is being able to provide a test code portion of the implemented ML code and show that it is able to predict given a fresh set of data. You should follow a similar process to this:
+You must provide a portion of your code in which you test your own implemented ML model. You should follow a similar process to this:
 
 ```python
 # load the model from disk
@@ -226,6 +257,8 @@ loaded_model.predict(test_data) # test_data must be one row of information as-is
 
 print(iris_y_test)
 ```
+
+In this process, you need to load the model (not necessary if you have the pipeline in-memory), get an example row of data from the initial dataset, feed it into the pipeline/model and make a prediction. The output must show the resulting prediction, and the meaning of this prediction.
 
 # Appendix
 
