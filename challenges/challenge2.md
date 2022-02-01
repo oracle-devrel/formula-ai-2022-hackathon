@@ -5,8 +5,6 @@ This challenge is all about brining to life a concept that we started to explore
 In challenge 2 of this hackathon, we would like for you to tell us how UI should work to deliver the most immersive AR Replay experience.
 Anything goes... from pinching to zoom and rotate model to adding AI optimal path track goes.
 
-Our App is based on ARkit, hence this challenge is specific to SwiftUI 
-
 See wireframes below:
 
 ![](../img/Loading.png?raw=true)
@@ -19,35 +17,25 @@ See wireframes below:
 
 ![](../img/arReplay.png?raw=true)
 
-# Data Set Notes
-As you know Formual 1 races take place in different cities. Therefore you need to bare in mind that your script need to be scalable so that we can apply it to other track coordiantes.
+# Solution Design
+Here is a high level Solution Design.
+For this challenge our focus is on Presentation Layer: AR channel.
+
+![](../img/solutionDesign.png?raw=true)
 
 
-## Blender Python API
-Blender python sits at the heart of this challenge, feel free to explore this page to get more info regarding how it works
-https://docs.blender.org/api/current/info_quickstart.html
+## SwiftUI
+Our App is based on ARkit, hence this challenge is specific to SwiftUI Developers
+https://developer.apple.com/xcode/swiftui/
 
-Blender Python API features:
-1. Edit any data the user interface can (Scenes, Meshes, Particles etc.).
-2. Modify user preferences, keymaps and themes.
-3. Run tools with own settings.
-4. Create user interface elements such as menus, headers and panels.
-5. Create new tools.
-6. Create interactive tools.
-7. Create new rendering engines that integrate with Blender.
-8. Subscribe to changes to data and it’s properties.
-9. Define new settings in existing Blender data.
-10. Draw in the 3D Viewport using Python.
 
 # Scoring
-The following things will be taken into consideration when doing an independent evaluation of challenge 3:
-1. BPY script running on our local machine
-2. BPY script generating track from different coordantes that the ones that we provided on the day
-3. BPY procedurally generating surface material
-4. Using OCI Compute in the solution (2 points).
-5. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks
+The following things will be taken into consideration when doing an independent evaluation of challenge 2:
+1. Working SwiftUI code
+2. Video and any UX research done to backup your UI interaction flow
+3. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite flow
 
-### Code Presentation and Readability
+<!-- ### Code Presentation and Readability
 
 Clean code is code that is easy to understand and easy to change.
 
@@ -57,15 +45,15 @@ It's writing code that is:
 - Maintainable
 - Extendable
 
-We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/#naming-conventions), but if the code is readable and easily understandable we will accept it as well as any other code adhering to the standard.
+We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/#naming-conventions), but if the code is readable and easily understandable we will accept it as well as any other code adhering to the standard. -->
 
-### Using OCI
+<!-- ### Using OCI
 
 If you show that you've used OCI during this challenge, you will be awarded with **2 bonus points**. We suggest looking into Oracle Cloud Infrastructure as a possible services that could be useful during development / submission.
 
 Here are some ideas for reference:
 - [Running Blender on OCI (GUI)](https://www.youtube.com/watch?v=amqxaw2Ujn4&ab_channel=OracleDevelopers)
-- [Running Blender on OCI (Headless)](https://jeffmdavies.medium.com/blender-2-83-on-oracle-cloud-infrastructure-80ecfcb2ce4e)
+- [Running Blender on OCI (Headless)](https://jeffmdavies.medium.com/blender-2-83-on-oracle-cloud-infrastructure-80ecfcb2ce4e) -->
 
 ## License
 Copyright (c) 2022 Oracle and/or its affiliates.
