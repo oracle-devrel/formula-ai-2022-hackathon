@@ -6,8 +6,7 @@ Since Metaverse is relying on 3d assets that usually take a bit of time to model
 In challenge 3 of this hackathon, we would like for you to create 3d track programatically using BPY.
 We will provide you with API for one of the tracks and we need to create a script that can turn x,y and z cordinates into awesome track.
 
-<!-- data structure picture waiting on Stuart for the API-->
-
+![Track Example](img/Track.png?raw=true)
 
 # Data Set Notes
 As you know Formual 1 races take place in different cities. Therefore you need to bare in mind that your script need to be scalable so that we can apply it to other track coordiantes.
