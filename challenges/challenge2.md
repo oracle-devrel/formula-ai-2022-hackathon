@@ -9,15 +9,15 @@ Our App is based on ARkit, hence this challenge is specific to SwiftUI
 
 See wireframes below:
 
-![](../img/Loading Screen.png?raw=true)
+![](../img/Loading.png?raw=true)
 
 
 
-![](../img/Replay Selection Screen.png?raw=true)
+![](../img/Selection.png?raw=true)
 
 
 
-![](../img/AR Replay.png?raw=true)
+![](../img/arReplay.png?raw=true)
 
 # Data Set Notes
 As you know Formual 1 races take place in different cities. Therefore you need to bare in mind that your script need to be scalable so that we can apply it to other track coordiantes.
