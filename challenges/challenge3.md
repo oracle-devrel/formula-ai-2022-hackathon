@@ -53,8 +53,8 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 If you show that you've used OCI during this challenge, you will be awarded with **2 bonus points**. We suggest looking into Oracle Cloud Infrastructure as a possible services that could be useful during development / submission.
 
 Here are some ideas for reference:
-[Running Blender on OCI (GUI): ](https://www.youtube.com/watch?v=amqxaw2Ujn4&ab_channel=OracleDevelopers)
-[Running Blender on OCI (Headless): ](https://jeffmdavies.medium.com/blender-2-83-on-oracle-cloud-infrastructure-80ecfcb2ce4e)
+- [Running Blender on OCI (GUI): ](https://www.youtube.com/watch?v=amqxaw2Ujn4&ab_channel=OracleDevelopers)
+- [Running Blender on OCI (Headless): ](https://jeffmdavies.medium.com/blender-2-83-on-oracle-cloud-infrastructure-80ecfcb2ce4e)
 
 ## License
 Copyright (c) 2022 Oracle and/or its affiliates.
