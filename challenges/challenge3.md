@@ -33,8 +33,7 @@ The following things will be taken into consideration when doing an independent 
 1. BPY script running on our local machine
 2. BPY script generating track from different coordantes that the ones that we provided on the day
 3. BPY procedurally generating surface material
-4. Using OCI Compute in the solution (2 points).
-5. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks
+4. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks. To help us sell your vision submit a video that shows off your work.
 
 ### Code Presentation and Readability
 
@@ -50,7 +49,7 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 
 ### Using OCI
 
-If you show that you've used OCI during this challenge, you will be awarded with **2 bonus points**. We suggest looking into Oracle Cloud Infrastructure as a possible services that could be useful during development / submission.
+We suggest looking into Oracle Cloud Infrastructure as a possible services that could be useful during development / submission.
 
 Here are some ideas for reference:
 - [Running Blender on OCI (GUI)](https://www.youtube.com/watch?v=amqxaw2Ujn4&ab_channel=OracleDevelopers)
