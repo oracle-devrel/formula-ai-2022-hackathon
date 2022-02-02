@@ -1,9 +1,13 @@
 # Introduction
-This challenge is all about brining to life a concept that we started to explore. It's all to do with what should be the net level Replay Experience. Think about any events that generate 3 dimmensional data, and how those can be translated into impressive replays. Wheter it is for eSports, Live action sport events etc.
+This challenge is all about bringing to life a concept that we started to explore. It's has all to do with what should be the next level Replay Experience. Think about any events that generate 3 dimmensional data, and how those can be translated into impressive replays. Wheter it is for eSports, Live action sport events etc. 
+
+We already have a working Swift/SwiftUI iPhone/iPad/Mac app, with a minimal user interface. The app connects to an Oracle Cloud API REST endpoint, where several individual F1 sessions are already recorded.
+
+The existing code could be found here (TO DO: LINK TO THE REPO)
 
 # Challenge
-In challenge 2 of this hackathon, we would like for you to tell us how UI should work to deliver the most immersive AR Replay experience.
-Anything goes... from pinching to zoom and rotate model to adding AI optimal path track goes.
+In challenge 2 of this hackathon, we would like for you to tell us how UX should work and look like to deliver the most immersive AR Replay experience.
+Anything goes... from pinching to zoom and rotate model to adding AI optimal path track.
 
 See wireframes below:
 
@@ -25,13 +29,11 @@ For this challenge our focus is on Presentation Layer: AR channel.
 
 
 ## SwiftUI
-Our App is based on ARkit, hence this challenge is specific to SwiftUI Developers
-https://developer.apple.com/xcode/swiftui/
-
+Our App is based on ARkit, hence this challenge is specific to Swift developers. The current UX is based on SwiftUI, but we are happy to accept other solutions as well.
 
 # Scoring
 The following things will be taken into consideration when doing an independent evaluation of challenge 2:
-1. Working SwiftUI code
+1. Working, optimized Swift code. We put a premium on how smooth, fluid and immersive the UX is.
 2. Video and any UX research done to backup your UI interaction flow
 3. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite flow
 
