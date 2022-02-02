@@ -6,17 +6,11 @@ Since Metaverse is relying on 3d assets that usually take a bit of time to model
 In challenge 3 of this hackathon, we would like for you to create 3d track programatically using BPY.
 We will provide you with API for one of the tracks and we need to create a script that can turn x,y and z cordinates into awesome track.
 
-<!-- data structure picture -->
-
+![](../img/Track.png?raw=true)
 
 # Data Set Notes
 As you know Formual 1 races take place in different cities. Therefore you need to bare in mind that your script need to be scalable so that we can apply it to other track coordiantes.
 
-# Inputs and Outputs
-
-From inputs perspective we do not accept using assets from the market place like materials, lights etc.
-
-Outputs we would like for you to create own surface materials, curbs and any objects that you wish as long as they are not under licence.
 
 ## Blender Python API
 Blender python sits at the heart of this challenge, feel free to explore this page to get more info regarding how it works
@@ -39,8 +33,7 @@ The following things will be taken into consideration when doing an independent 
 1. BPY script running on our local machine
 2. BPY script generating track from different coordantes that the ones that we provided on the day
 3. BPY procedurally generating surface material
-4. Using OCI Compute in the solution (2 points).
-5. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks
+4. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks. To help us sell your vision submit a video that shows off your work.
 
 ### Code Presentation and Readability
 
@@ -56,7 +49,11 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 
 ### Using OCI
 
-If you show that you've used OCI during this challenge, you will be awarded with **2 bonus points**. We suggest looking into OCI Compute and OCI Functions as possible services that could be useful during development / submission.
+We suggest looking into Oracle Cloud Infrastructure as a possible services that could be useful during development / submission.
+
+Here are some ideas for reference:
+- [Running Blender on OCI (GUI)](https://www.youtube.com/watch?v=amqxaw2Ujn4&ab_channel=OracleDevelopers)
+- [Running Blender on OCI (Headless)](https://jeffmdavies.medium.com/blender-2-83-on-oracle-cloud-infrastructure-80ecfcb2ce4e)
 
 ## License
 Copyright (c) 2022 Oracle and/or its affiliates.
