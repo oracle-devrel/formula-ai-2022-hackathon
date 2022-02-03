@@ -19,7 +19,7 @@ Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, u
 Please also make sure you register your team and your submission via the hackathon website https://www.formulaaihack.com.
 
 # Challenge
-In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model able to make accurate weather predictions / forecasting.
+In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and you will be required develop an Artificial Intelligence model that is able to make accurate weather predictions / forecasts.
 
 The data structure of each packet provided to you is as follows (example is a real packet from the dataset). You can have a detailed look at all structure definitions [in this file](https://github.com/jasperan/f1-telemetry-oracle/blob/main/telemetry_f1_2021/cleaned_packets.py). Note that in the dataset, two additional variables (not present in the game) have been added, which are:
 - gamehost: it's an unique identifier to separate different dataset consumers. It's infrastructure-related and it's a dummy variable from a qualitative perspective. 
@@ -210,14 +210,23 @@ You can find all weather types in [this file (already referenced above)](https:/
 As said before, an exploratory data analysis is recommended to watch for feature importances and feature correlations when including/excluding variables from the dataset.
 
 # Scoring
-The following things will be taken into consideration when doing an independent evaluation of challenge 1:
+
+Scoring will be divided into a technical and a non-technical part.
+
+## Technical Scoring
+The following things will be taken into consideration when doing a technical evaluation of challenge 1:
 1. (5 points) Problem Modeling and approach (presented in the notebook)
-2. (3 points) Code presentation and readability (presented in the notebook)
+2. (3 points) 
 3. From the top 15 submissions, +2 extra points will be given to the top 5 teams with the highest model accuracy. The metric used will be Categorization Accuracy or Mean Absolute Error. Teams **must** indicate and print the accuracy of their model predictions in the notebook, using any available library, e.g. sklearn's accuracy score (meausrement must be MAE or Categorization Accuracy).
 4. (2 points) Making an architecture proposal that includes OCI in the solution. (presented in the notebook)
 5. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
 
 Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
+
+## Non-Technical Scoring
+1. (5 points) Alignment to the problem: how well you've aligned your solution to the problem description.
+2. (5 points) Quality of design: how well your design is constructed. This includes looking at the presentation of the design, including code presentation and readability (presented in the notebook)
+3. (5 points) Originality of the design: how original your solution is perceived to be from the challenge's point of view. Taking an interesting approach, thinking outside the box, and testing assumptions count towards the originality of the design
 
 TODO video
 ### Problem Modeling and Approach
