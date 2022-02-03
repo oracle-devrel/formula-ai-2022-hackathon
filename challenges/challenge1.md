@@ -14,9 +14,9 @@ Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, u
 
 # Competition
 
-[Follow this link to submit your notebook for the challenge.](https://www.kaggle.com/c/formulaai-hackathon)
+[Follow this link to create your notebook for the challenge.](https://www.kaggle.com/oracledevrel/formulaaihackathon2022) You're free to choose where to create a notebook that uses the dataset. When you register your submission in [the hackathon website](https://formulaaihack.com), make sure to link a URL to the notebook you've created in the submission, and any additional material like an instructional video / external design. 
 
-Please also make sure you register your team and your submission via the hackathon website https://www.formulaaihack.com.
+Please also make sure you register your team and your submission via [the hackathon website](https://www.formulaaihack.com).
 
 # Challenge
 In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and you will be required develop an Artificial Intelligence model that is able to make accurate weather predictions / forecasts.
@@ -216,19 +216,21 @@ Due to the nature of the challenge, it will have its own weighting. Therefore, f
 ## Technical Scoring
 The following things will be taken into consideration when doing a technical evaluation of challenge 1:
 1. (5 points) Problem Modeling and approach (presented in the notebook)
-2. (3 points) 
+2. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
 3. From the top 15 submissions, +2 extra points will be given to the top 5 teams with the highest model accuracy. The metric used will be Categorization Accuracy or Mean Absolute Error. Teams **must** indicate and print the accuracy of their model predictions in the notebook, using any available library, e.g. sklearn's accuracy score (meausrement must be MAE or Categorization Accuracy).
-4. (2 points) Making an architecture proposal that includes OCI in the solution. (presented in the notebook)
-5. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
 
-Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
+Therefore, the technical score will be out of 8 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 10 points.
 
 ## Non-Technical Scoring
-1. (5 points) Alignment to the problem: how well you've aligned your solution to the problem description.
-2. (5 points) Quality of design: how well your design is constructed. This includes looking at the presentation of the design, including code presentation and readability (presented in the notebook)
-3. (5 points) Originality of the design: how original your solution is perceived to be from the challenge's point of view. Taking an interesting approach, thinking outside the box, and testing assumptions count towards the originality of the design
+1. (3 points) Alignment to the problem: how well you've aligned your solution to the problem description.
+2. (3 points) Quality of design: how well your design is constructed. This includes looking at the presentation of the design, including code presentation and readability (presented in the notebook)
+3. (3 points) Originality of the design: how original your solution is perceived to be from the challenge's point of view. Taking an interesting approach, thinking outside the box, and testing assumptions count towards the originality of the design
+4. (3 points) Video submission of the team explaining the solution: a video of your team members explaining the solution and your design. Points will be awarded considering how well it's presented, and how well the ideas are explained in the video.
 
-TODO video
+The non-technical score will sum up to 12 points.
+
+Both technical and non-technical scores will be summed in the end to decide the leaderboard.
+
 ### Problem Modeling and Approach
 
 Provide a description on how you're approaching the problem, the variables that you're going to consider and why. We recommend doing this inside the code as you continue development, that way you'll have things clearer when solving the problem.
