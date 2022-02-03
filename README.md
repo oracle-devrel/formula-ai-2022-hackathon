@@ -6,7 +6,7 @@
 This is a repository containing technical specifications for the about the Formula AI 2022 Hackathon's challenges. You can find more information about the hackathon [here.](https://www.formulaaihack.com/)
 
 ## Challenge 1
-Check out [this file](challenges/challenge1.md) for the technical abstract. Also, you have available [this notebook](notebooks/formulahack.ipynb) as a starting point in the challenge.
+Check out [this file](challenges/challenge1.md) for the technical abstract. Also, you have available [this HTML report](notebooks/report.html) as a starting point in the challenge. Make sure to open the HTML file with a browser.
 
 ## Challenge 2
 Check out [this file](challenges/challenge2.md) for the technical abstract. 
