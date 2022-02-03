@@ -211,7 +211,7 @@ As said before, an exploratory data analysis is recommended to watch for feature
 
 # Scoring
 
-Scoring will be divided into a technical and a non-technical part.
+Due to the nature of the challenge, it will have its own weighting. Therefore, for this challenge, scoring will be divided into a technical and a non-technical part.
 
 ## Technical Scoring
 The following things will be taken into consideration when doing a technical evaluation of challenge 1:
