@@ -14,9 +14,13 @@ Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, u
 
 # Competition
 
+<<<<<<< HEAD
 [Follow this link to submit your notebook for the challenge.](https://www.kaggle.com/c/formulaai-hackathon)
 
 Please also make sure you register your team and your submission via the hackathon website https://www.formulaaihack.com.
+=======
+The competition will be hosted in Kaggle. Follow [this link](https://www.kaggle.com/c/formulaai-hackathon) to register for the competition and make your submissions during the Hackathon.
+>>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
 
 # Challenge
 In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model able to make accurate weather predictions / forecasting.
@@ -216,6 +220,11 @@ The following things will be taken into consideration when doing an independent 
 3. From the top 15 submissions, +2 extra points will be given to the top 5 teams with the highest model accuracy. The metric used will be Categorization Accuracy or Mean Absolute Error. Teams **must** indicate and print the accuracy of their model predictions in the notebook, using any available library, e.g. sklearn's accuracy score (meausrement must be MAE or Categorization Accuracy).
 4. (2 points) Making an architecture proposal that includes OCI in the solution. (presented in the notebook)
 5. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
+<<<<<<< HEAD
+=======
+
+Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
+>>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
 
 Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
 
@@ -239,8 +248,18 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 ### Model Accuracy 
 
 We will rank the model accuracy and compare it with the rest of participants. Since model training and tuning is an important part of Data Science, we're awarding 2 additional points to the five teams present in the top 15 with the highest model accuracy.
+<<<<<<< HEAD
 
 In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
+=======
+
+In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
+
+### Using OCI
+
+If you show in your solution that you can integrate the solution in OCI, be it for scaling, having an infrastructure in OCI that supports model testing, model retraining, or other innovative solutions, you will be awarded with **2 points**. We suggest looking into OCI Compute, OCI Data Science and OCI Functions as possible services that could be useful during development / submission.
+You can submit this section of "using OCI" inside the notebook itself when making the submission, by explaining your solution in a section. You can call this section "Using OCI".
+>>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
 
 ### Model Exporting and Testing
 
