@@ -1,19 +1,16 @@
 # Introduction
-Metaverse is booming and it is about to create a whole new interaction paradim. 
-Since Metaverse is relying on 3d assets that usually take a bit of time to model manually, we belive that using data to programatically create 3d assets will benefit whole industry going forward. Using AI to programatic  create 3d asset is not a new concept and there has been a vast number of R&D papers looking at applying AI for various use cases spaning across animations, shaders, sculping or converting 2d images to 3d assets.
+Metaverse is booming and it is about to create a whole new interaction paradigm. Since Metaverse is relying on 3d assets that usually take a bit of time to model manually, we believe that using data to programmatically create 3d assets will benefit whole industry going forward. Using AI to programmatic create 3d asset is not a new concept and there are many Research & Development papers applying AI for various use cases spanning across animations, shaders, sculpting or converting 2d images to 3d assets.
 
 # Challenge
-In challenge 3 of this hackathon, we would like for you to create 3d track programatically using BPY.
-We will provide you with API for one of the tracks and we need to create a script that can turn x,y and z cordinates into awesome track.
+In challenge 3 of this hackathon, we would like for you to create 3d track programmatically using Blender Python (BPY).
 
 ![](../img/Track.png?raw=true)
 
 # Data Set Notes
-As you know Formual 1 races take place in different cities. Therefore you need to bare in mind that your script need to be scalable so that we can apply it to other track coordiantes.
-
+Formula 1 races take place in different cities across the world. Your script needs to be scalable so that it can be apply it to other track coordinates.
 
 ## Blender Python API
-Blender python sits at the heart of this challenge, feel free to explore this page to get more info regarding how it works
+Blender Python sits at the heart of this challenge, feel free to explore this page to get more info regarding how it works
 https://docs.blender.org/api/current/info_quickstart.html
 
 Blender Python API features:
@@ -30,10 +27,10 @@ Blender Python API features:
 
 # Scoring
 The following things will be taken into consideration when doing an independent evaluation of challenge 3:
-1. BPY script running on our local machine
-2. BPY script generating track from different coordantes that the ones that we provided on the day
+1. BPY script running on our local machine. Including requirements.txt is a MUST.
+2. BPY script will be independently tested with a different track with different track coordinates than the test track coordinates provided at the start of the hackathon.
 3. BPY procedurally generating surface material
-4. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks. To help us sell your vision submit a video that shows off your work.
+4. Wow factor - this is a bit subjective hence we will get our internal teams to vote on the favourite track/tracks. Show off your work by including the experience in your video presentation.
 
 ### Code Presentation and Readability
 
