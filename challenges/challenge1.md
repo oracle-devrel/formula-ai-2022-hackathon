@@ -14,7 +14,9 @@ Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, u
 
 # Competition
 
-The competition will be hosted in Kaggle. Follow [this link](https://www.kaggle.com/c/formulaai-hackathon) to register for the competition and make your submissions during the Hackathon.
+[Follow this link to submit your notebook for the challenge.](https://www.kaggle.com/c/formulaai-hackathon)
+
+Please also make sure you register your team and your submission via the hackathon website https://www.formulaaihack.com.
 
 # Challenge
 In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model able to make accurate weather predictions / forecasting.
@@ -217,6 +219,7 @@ The following things will be taken into consideration when doing an independent 
 
 Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
 
+TODO video
 ### Problem Modeling and Approach
 
 Provide a description on how you're approaching the problem, the variables that you're going to consider and why. We recommend doing this inside the code as you continue development, that way you'll have things clearer when solving the problem.
@@ -238,11 +241,6 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 We will rank the model accuracy and compare it with the rest of participants. Since model training and tuning is an important part of Data Science, we're awarding 2 additional points to the five teams present in the top 15 with the highest model accuracy.
 
 In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
-
-### Using OCI
-
-If you show in your solution that you can integrate the solution in OCI, be it for scaling, having an infrastructure in OCI that supports model testing, model retraining, or other innovative solutions, you will be awarded with **2 points**. We suggest looking into OCI Compute, OCI Data Science and OCI Functions as possible services that could be useful during development / submission.
-You can submit this section of "using OCI" inside the notebook itself when making the submission, by explaining your solution in a section. You can call this section "Using OCI".
 
 ### Model Exporting and Testing
 
