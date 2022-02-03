@@ -9,10 +9,10 @@ This is a repository containing technical specifications for the about the Formu
 Check out [this file](challenges/challenge1.md) for the technical abstract. Also, you have available [this notebook](notebooks/formulahack.ipynb) as a starting point in the challenge.
 
 ## Challenge 2
-WIP
+Check out [this file](challenges/challenge2.md) for the technical abstract. 
 
 ## Challenge 3
-WIP
+Check out [this file](challenges/challenge3.md) for the technical abstract. 
 
 ## License
 Copyright (c) 2022 Oracle and/or its affiliates.
