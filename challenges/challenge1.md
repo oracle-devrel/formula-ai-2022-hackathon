@@ -158,13 +158,10 @@ Considerations about the dataset:
 - In case of a Grand Prix, where we have practice, qualifying and race sessions (equivalent to Friday, Saturday and Sunday in reality), the length of the WeatherForecastSample packet array will be longer, as it will contain more predictions for more race types. The maximum theoretical number of forecast samples for the same timestamp is 56. This means that you're able to access weather forecasting for the weekend, even if you're still exploring data from the qualifying or practice sessions, and take this data into consideration if you want.
 - You have one packet per second. In reality, the game allows getting 2 PacketSessionData packets per second, but to avoid duplicates, we've removed half of them from the dataset.
 - You are free to consider whichever variables you deem necessary to make an accurate prediction of the variable __weather__, together with a probability of an event happening (e.g. 85% cloudy).
-- The unique index for the dataset is (session_uid, player_car_index, timestamp). Meaning that the granularity will be as such. You can explore the total number of different sessions played by counting the session_uid distinct values. There may be several player_car_index variables for the session_uid (this may be the case in an online game where two players transmitting data into this dataset were playing in the same race). 
-- Dataset will be provided to you in raw format (JSON) as well as CSV format. In tabular/CSV format, we will have one row per second, per car. So, if there are e.g. 10 weather forecasts given in any given second, it will correspond to 10 separate rows in tabular format, each one with a different __time_offset__ (see WeatherForecastSample struct above).
+- The unique index for the dataset is (session_uid, player_car_index, timestamp). Meaning that the granularity of the data will be as such. You can explore the total number of different sessions played by counting the session_uid distinct values. There may be several player_car_index variables for the session_uid (this may be the case in an online game where two players transmitting data into this dataset were playing in the same race). 
 - For practice races (P1, P2, P3) the maximum session length is 1 hour.
 - For qualifying races (Q1, Q2, Q3) the maximum session length is 18 minutes.
 
-Considerations for the competition:
-- Sometimes, when making a submission in Kaggle, you're prompted to submit a CSV file. This CSV file, called the submission CSV, contains a prediction for each one of the rows in the original dataset, and is compared against a solution CSV file (provided by the admins) to accurately measure the accuracy of the models. **However, this competition will not consider the public / private leaderboards to measure accuracy**. In order to check how submissions will be scored, please refer to the "Scoring" section further down below.
 
 # Inputs and Outputs
 
