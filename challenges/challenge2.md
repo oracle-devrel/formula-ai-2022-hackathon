@@ -3,7 +3,7 @@ This challenge is all about bringing to life a concept that we started to explor
 
 We already have a working Swift/SwiftUI iPhone/iPad/Mac app, with a minimal user interface. The app connects to an Oracle Cloud API REST endpoint, where several individual F1 sessions are already recorded.
 
-The existing code could be found here (TO DO: LINK TO THE REPO)
+The existing code could be found in this repo.
 
 # Challenge
 In challenge 2 of this hackathon, we would like for you to tell us how UX should work and look like to deliver the most immersive AR Replay experience.
@@ -28,8 +28,8 @@ For this challenge our focus is on Presentation Layer: AR channel.
 ![](../img/solutionDesign.png?raw=true)
 
 
-## SwiftUI
-Our App is based on ARkit, hence this challenge is specific to Swift developers. The current UX is based on SwiftUI, but we are happy to accept other solutions as well.
+## Swift/SwiftUI
+Our App is based on ARKit, hence this challenge is specific to Swift developers. The current UX is based on SwiftUI, but we are can accept other solutions as well, though SwiftUI is preffered.
 
 # Scoring
 The following things will be taken into consideration when doing an independent evaluation of challenge 2:
@@ -42,7 +42,7 @@ The following things will be taken into consideration when doing an independent 
 Clean code is code that is easy to understand and easy to change.
 
 It's writing code that is:
-- Readable
+- Readable (please follow https://google.github.io/swift/)
 - Understandable
 - Maintainable
 - Extendable
