@@ -14,16 +14,12 @@ Similarly, F1 2021, the official Formula 1 videogame developed by Codemasters, u
 
 # Competition
 
-<<<<<<< HEAD
-[Follow this link to submit your notebook for the challenge.](https://www.kaggle.com/c/formulaai-hackathon)
+[Follow this link to create your notebook for the challenge.](https://www.kaggle.com/oracledevrel/formulaaihackathon2022) You're free to choose where to create a notebook that uses the dataset. When you register your submission in [the hackathon website](https://formulaaihack.com), make sure to link a URL to the notebook you've created in the submission, and any additional material like an instructional video / external design. 
 
-Please also make sure you register your team and your submission via the hackathon website https://www.formulaaihack.com.
-=======
-The competition will be hosted in Kaggle. Follow [this link](https://www.kaggle.com/c/formulaai-hackathon) to register for the competition and make your submissions during the Hackathon.
->>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
+Please also make sure you register your team and your submission via [the hackathon website](https://www.formulaaihack.com).
 
 # Challenge
-In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and will develop and Artificial Intelligence model able to make accurate weather predictions / forecasting.
+In challenge 1 of this hackathon, you will be presented with historical weather data from the RedBull Racing eSports team and you will be required develop an Artificial Intelligence model that is able to make accurate weather predictions / forecasts.
 
 The data structure of each packet provided to you is as follows (example is a real packet from the dataset). You can have a detailed look at all structure definitions [in this file](https://github.com/jasperan/f1-telemetry-oracle/blob/main/telemetry_f1_2021/cleaned_packets.py). Note that in the dataset, two additional variables (not present in the game) have been added, which are:
 - gamehost: it's an unique identifier to separate different dataset consumers. It's infrastructure-related and it's a dummy variable from a qualitative perspective. 
@@ -162,13 +158,10 @@ Considerations about the dataset:
 - In case of a Grand Prix, where we have practice, qualifying and race sessions (equivalent to Friday, Saturday and Sunday in reality), the length of the WeatherForecastSample packet array will be longer, as it will contain more predictions for more race types. The maximum theoretical number of forecast samples for the same timestamp is 56. This means that you're able to access weather forecasting for the weekend, even if you're still exploring data from the qualifying or practice sessions, and take this data into consideration if you want.
 - You have one packet per second. In reality, the game allows getting 2 PacketSessionData packets per second, but to avoid duplicates, we've removed half of them from the dataset.
 - You are free to consider whichever variables you deem necessary to make an accurate prediction of the variable __weather__, together with a probability of an event happening (e.g. 85% cloudy).
-- The unique index for the dataset is (session_uid, player_car_index, timestamp). Meaning that the granularity will be as such. You can explore the total number of different sessions played by counting the session_uid distinct values. There may be several player_car_index variables for the session_uid (this may be the case in an online game where two players transmitting data into this dataset were playing in the same race). 
-- Dataset will be provided to you in raw format (JSON) as well as CSV format. In tabular/CSV format, we will have one row per second, per car. So, if there are e.g. 10 weather forecasts given in any given second, it will correspond to 10 separate rows in tabular format, each one with a different __time_offset__ (see WeatherForecastSample struct above).
+- The unique index for the dataset is (session_uid, player_car_index, timestamp). Meaning that the granularity of the data will be as such. You can explore the total number of different sessions played by counting the session_uid distinct values. There may be several player_car_index variables for the session_uid (this may be the case in an online game where two players transmitting data into this dataset were playing in the same race). 
 - For practice races (P1, P2, P3) the maximum session length is 1 hour.
 - For qualifying races (Q1, Q2, Q3) the maximum session length is 18 minutes.
 
-Considerations for the competition:
-- Sometimes, when making a submission in Kaggle, you're prompted to submit a CSV file. This CSV file, called the submission CSV, contains a prediction for each one of the rows in the original dataset, and is compared against a solution CSV file (provided by the admins) to accurately measure the accuracy of the models. **However, this competition will not consider the public / private leaderboards to measure accuracy**. In order to check how submissions will be scored, please refer to the "Scoring" section further down below.
 
 # Inputs and Outputs
 
@@ -214,21 +207,27 @@ You can find all weather types in [this file (already referenced above)](https:/
 As said before, an exploratory data analysis is recommended to watch for feature importances and feature correlations when including/excluding variables from the dataset.
 
 # Scoring
-The following things will be taken into consideration when doing an independent evaluation of challenge 1:
+
+Due to the nature of the challenge, it will have its own weighting. Therefore, for this challenge, scoring will be divided into a technical and a non-technical part.
+
+## Technical Scoring
+The following things will be taken into consideration when doing a technical evaluation of challenge 1:
 1. (5 points) Problem Modeling and approach (presented in the notebook)
-2. (3 points) Code presentation and readability (presented in the notebook)
+2. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
 3. From the top 15 submissions, +2 extra points will be given to the top 5 teams with the highest model accuracy. The metric used will be Categorization Accuracy or Mean Absolute Error. Teams **must** indicate and print the accuracy of their model predictions in the notebook, using any available library, e.g. sklearn's accuracy score (meausrement must be MAE or Categorization Accuracy).
-4. (2 points) Making an architecture proposal that includes OCI in the solution. (presented in the notebook)
-5. (3 points) Providing a test code portion implementing your model, which includes exporting the model, importing it and using it with an example data point. More on this on the following sub-section: model exporting and testing. (presented in the notebook)
-<<<<<<< HEAD
-=======
 
-Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
->>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
+Therefore, the technical score will be out of 8 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 10 points.
 
-Therefore, the total score will be out of 13 points, with the five top teams in the top 15 receiving +2 extra points. This means the maximum theoretical score is 15 points.
+## Non-Technical Scoring
+1. (3 points) Alignment to the problem: how well you've aligned your solution to the problem description.
+2. (3 points) Quality of design: how well your design is constructed. This includes looking at the presentation of the design, including code presentation and readability (presented in the notebook)
+3. (3 points) Originality of the design: how original your solution is perceived to be from the challenge's point of view. Taking an interesting approach, thinking outside the box, and testing assumptions count towards the originality of the design
+4. (3 points) Video submission of the team explaining the solution: a video of your team members explaining the solution and your design. Points will be awarded considering how well it's presented, and how well the ideas are explained in the video.
 
-TODO video
+The non-technical score will sum up to 12 points.
+
+Both technical and non-technical scores will be summed in the end to decide the leaderboard.
+
 ### Problem Modeling and Approach
 
 Provide a description on how you're approaching the problem, the variables that you're going to consider and why. We recommend doing this inside the code as you continue development, that way you'll have things clearer when solving the problem.
@@ -248,18 +247,8 @@ We recommend adhering to the [PEP 8 -- Style Guide for Python Code](https://www.
 ### Model Accuracy 
 
 We will rank the model accuracy and compare it with the rest of participants. Since model training and tuning is an important part of Data Science, we're awarding 2 additional points to the five teams present in the top 15 with the highest model accuracy.
-<<<<<<< HEAD
 
 In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
-=======
-
-In your code, you **must print** either a leaderboard (if you've trained several models with an AutoML tool) or scoring metrics for the models that you have, so that judges can check the accuracy individually. 
-
-### Using OCI
-
-If you show in your solution that you can integrate the solution in OCI, be it for scaling, having an infrastructure in OCI that supports model testing, model retraining, or other innovative solutions, you will be awarded with **2 points**. We suggest looking into OCI Compute, OCI Data Science and OCI Functions as possible services that could be useful during development / submission.
-You can submit this section of "using OCI" inside the notebook itself when making the submission, by explaining your solution in a section. You can call this section "Using OCI".
->>>>>>> 5e5a97ba3f0a2284139c208c35c29b4974a060ec
 
 ### Model Exporting and Testing
 
